@@ -1,0 +1,31 @@
+﻿@model Comment
+@{ 
+    ViewBag.Title = "评价" + ViewBag.Name;
+}
+<h2>@ViewBag.Title</h2>
+
+<form asp-action="Evaluating" asp-controller="Home" asp-route-uid="@ViewBag.Uid" method="post">
+    <table class="detail-table">
+        <tr>
+            <td class="row-title">评价等级</td>
+            <td>
+                <select asp-for="Level">
+                    <option>优秀</option>
+                    <option>良好</option>
+                    <option>中等</option>
+                    <option>及格</option>
+                    <option>不及格</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td class="row-title">评价内容</td>
+            <td>
+                <textarea asp-for="Content" placeholder="选填"></textarea>
+            </td>
+        </tr>
+    </table>
+    <p>
+        <input type="submit" class="btn inverse" value="提交" />
+    </p>
+</form>

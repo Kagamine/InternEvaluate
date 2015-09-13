@@ -1,0 +1,23 @@
+﻿@model User
+@{ 
+    ViewBag.Title = Model.Name + "的评价";
+}
+
+<table class="detail-table">
+    @foreach (var c in Model.Evaluated.OrderByDescending(x => x.IsChargeman))
+    {
+        <tr>
+            <td>
+                @if (c.IsChargeman)
+                {
+                    <p><b>来自 @c.Evaluator.Name 的评价：@c.Level</b></p>
+                }
+                else
+                {
+                    <p><b>来自 组员 的评价：@c.Level</b></p>
+                }
+                <p>@c.Content</p>
+            </td>
+        </tr>
+    }
+</table>

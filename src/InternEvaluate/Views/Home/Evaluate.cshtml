@@ -1,0 +1,41 @@
+﻿@model IEnumerable<User>
+@{ 
+    ViewBag.Title = "学生互评";
+}
+<table class="table">
+    <thead>
+        <tr>
+            <th>学号</th>
+            <th>姓名</th>
+            <th>班级</th>
+            <th>组</th>
+            <th>我的评级</th>
+            <th>我的评价</th>
+            <th>操作</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var x in Model)
+        { 
+            <tr>
+                <td>@x.StudentNumber</td>
+                <td>@x.Name</td>
+                <td>@x.Class</td>
+                <td>@x.Group</td>
+                @if (x.Evaluated.Any(y => y.EvaluatorId == User.Current.Id))
+                {
+                    <td>@x.Evaluated.Where(y => y.EvaluatorId == User.Current.Id).Single().Level</td>
+                    <td>@x.Evaluated.Where(y => y.EvaluatorId == User.Current.Id).Single().Content</td>
+                }
+                else
+                {
+                    <td>-</td>
+                    <td>-</td>
+                }
+                <td>
+                    <a asp-action="Evaluating" asp-controller="Home" asp-route-id="@x.Id">评价</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

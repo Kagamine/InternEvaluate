@@ -1,0 +1,44 @@
+﻿@{ 
+    ViewBag.Title = "创建学生";
+}
+<h2>@ViewBag.Title</h2>
+<form asp-action="CreateStudent" asp-controller="Home">
+    <table class="detail-table">
+        <tr>
+            <td class="row-title">用户名</td>
+            <td><input type="text" name="username" /></td>
+        </tr>
+        <tr>
+            <td class="row-title">密码</td>
+            <td><input type="password" name="password" /></td>
+        </tr>
+        <tr>
+            <td class="row-title">姓名</td>
+            <td><input type="text" name="name" /></td>
+        </tr>
+        <tr>
+            <td class="row-title">学号</td>
+            <td><input type="text" name="studentnumber" /></td>
+        </tr>
+        <tr>
+            <td class="row-title">班级</td>
+            <td><input type="text" name="class" /></td>
+        </tr>
+        <tr>
+            <td class="row-title">组</td>
+            <td><input type="text" name="group" /></td>
+        </tr>
+        <tr>
+            <td class="row-title">职务</td>
+            <td>
+                <select name="position">
+                    <option>组员</option>
+                    <option>组长</option>
+                </select>
+            </td>
+        </tr>
+    </table>
+    <p>
+        <input type="submit" class="btn inverse" value="提交" />
+    </p>
+</form>

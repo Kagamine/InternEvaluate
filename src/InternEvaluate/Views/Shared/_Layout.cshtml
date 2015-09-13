@@ -1,0 +1,45 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - 毕业实习互评系统</title>
+    <link href="~/styles/icons.css" rel="stylesheet" />
+    <link href="~/styles/site.css" rel="stylesheet" type="text/css" />
+    <script src="~/scripts/jquery-1.10.2.min.js"></script>
+    <script src="~/scripts/site.js"></script>
+    <!--[if lte IE 9]>
+    <script src="/scripts/pie.js"></script>
+    <![endif]-->
+    <!--[if lte IE 6]>
+    <script src="/scripts/png.js"></script>
+    <![endif]-->
+</head>
+<body>
+    <div class="left-sidebar">
+        <div class="sidebar-subtitle">毕业实习互评系统</div>
+        <a asp-action="Index" asp-controller="Home"><div class="sidebar-menu"><i class="fa fa-home icon ico"></i>后台首页</div></a>
+        @if (User.IsInRoles("组长, 学生"))
+        {
+            <div class="sidebar-subtitle">学生评价</div>
+            <a asp-action="Evaluate" asp-controller="Home"><div class="sidebar-menu"><i class="fa fa-comment icon ico"></i>组内评价</div></a>
+        }
+        else
+        {
+            <div class="sidebar-subtitle">评价管理</div>
+            <a asp-action="Student" asp-controller="Home"><div class="sidebar-menu"><i class="fa fa-users icon ico"></i>学生管理</div></a>
+            <a asp-action="CreateStudent" asp-controller="Home"><div class="sidebar-menu"><i class="fa fa-user-plus icon ico"></i>添加学生</div></a>
+        }
+        <div class="sidebar-subtitle">其他操作</div>
+        <a asp-action="Modify" asp-controller="Account"><div class="sidebar-menu"><i class="fa fa-cog icon ico"></i>修改密码</div></a>
+        <a href="javascript: $('#frmLogout').submit()"><div class="sidebar-menu"><i class="fa fa-sign-out icon ico"></i>退出系统</div></a>
+        <form asp-action="Logout" asp-controller="Account" method="post" id="frmLogout"></form>
+    </div>
+    <div class="container">
+        <div class="wrap-cont">
+            @RenderBody()
+            <div class="footer">Copyright © 2015 Harbin Code Comb Technology Co., Ltd. All rights reserved.</div>
+        </div>
+    </div>
+</body>
+</html>

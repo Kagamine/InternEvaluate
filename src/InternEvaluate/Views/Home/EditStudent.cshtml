@@ -1,0 +1,45 @@
+﻿@model User
+@{
+    ViewBag.Title = "编辑学生";
+}
+<h2>@ViewBag.Title</h2>
+<form asp-action="EditStudent" asp-controller="Home">
+    <table class="detail-table">
+        <tr>
+            <td class="row-title">用户名</td>
+            <td>@Model.UserName</td>
+        </tr>
+        <tr>
+            <td class="row-title">新密码</td>
+            <td><input type="password" name="password" placeholder="不修改请留空" /></td>
+        </tr>
+        <tr>
+            <td class="row-title">姓名</td>
+            <td><input type="text" name="name" asp-for="Name" /></td>
+        </tr>
+        <tr>
+            <td class="row-title">学号</td>
+            <td><input type="text" name="studentnumber" asp-for="StudentNumber" /></td>
+        </tr>
+        <tr>
+            <td class="row-title">班级</td>
+            <td><input type="text" name="class" asp-for="Class" /></td>
+        </tr>
+        <tr>
+            <td class="row-title">组</td>
+            <td><input type="text" name="group" asp-for="Group" /></td>
+        </tr>
+        <tr>
+            <td class="row-title">职务</td>
+            <td>
+                <select name="position">
+                    <!option @(ViewBag.IsChargeman ? "" : "selected")>组员</!option>
+                    <!option @(ViewBag.IsChargeman ? "selected " : "")>组长</!option>
+                </select>
+            </td>
+        </tr>
+    </table>
+    <p>
+        <input type="submit" class="btn inverse" value="提交" />
+    </p>
+</form>

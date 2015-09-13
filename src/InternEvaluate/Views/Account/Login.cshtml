@@ -1,0 +1,35 @@
+﻿@{
+    ViewBag.Title = "登录";
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - 毕业实习学生互评系统</title>
+    <link href="~/styles/site.css" rel="stylesheet" type="text/css" />
+    <!--[if lte IE 9]>
+    <script src="/Scripts/pie.js"></script>
+    <![endif]-->
+    <!--[if lte IE 6]>
+    <script src="/Scripts/png.js"></script>
+    <![endif]-->
+
+</head>
+<body style="background-color:#2a3b52;background-image:none;">
+    <div class="login">
+        <form asp-action="Login" asp-controller="Account">
+            <img class="login-logo" src="~/Images/Logo.png" alt="毕业实习学生互评系统" />
+            <h2 class="login-title">毕业实习互评系统</h2>
+            <input type="text" class="login-textbox" placeholder="用户名" name="Username" />
+            <br /><input type="password" class="login-textbox" placeholder="密码" name="Password" />
+            <input type="submit" value="" class="login-go" />
+        </form>
+    </div>
+    <div class="clr"></div>
+    <div class="footer">
+        Copyright © 2015 Harbin Code Comb Technology Co., Ltd. All rights reserved.
+    </div>
+</body>
+</html>

@@ -1,0 +1,56 @@
+﻿@model IEnumerable<Student>
+@{ 
+    ViewBag.Title = "学生管理";
+}
+
+<h2>@ViewBag.Title</h2>
+<table class="detail-table">
+    <thead>
+        <tr>
+            <th rowspan="2">学号</th>
+            <th rowspan="2">姓名</th>
+            <th rowspan="2">班级</th>
+            <th rowspan="2">组</th>
+            <th colspan="5">评级</th>
+            <th rowspan="2">操作</th>
+        </tr>
+        <tr>
+            <th>不及格</th>
+            <th>及格</th>
+            <th>中等</th>
+            <th>良好</th>
+            <th>优秀</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var x in Model)
+        { 
+            <tr>
+                <td>@x.StudentNumber</td>
+                <td>@(x.IsChargeman? "*" : "")@x.Name</td>
+                <td>@x.Class</td>
+                <td>@x.Group</td>
+                <td>@x.Level_0</td>
+                <td>@x.Level_1</td>
+                <td>@x.Level_2</td>
+                <td>@x.Level_3</td>
+                <td>@x.Level_4</td>
+                <td>
+                    <a asp-action="Detail" asp-controller="Home" asp-route-id="@x.Id">查看详评</a>
+                    <a asp-action="EditStudent" asp-controller="Home" asp-route-id="@x.Id">编辑学生</a>
+                    <a href="javascript:Delete('@x.Id');">删除学生</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+<form asp-action="DeleteStudent" asp-controller="Home" method="post" id="frmDeleteStudent()">
+    <input type="hidden" id="id" name="id" />
+</form>
+<script>
+    function Delete(id)
+    {
+        $('#id').val(id);
+        $('#frmDeleteStudent').submit();
+    }
+</script>

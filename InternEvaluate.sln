@@ -1,0 +1,33 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.23107.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{EEA7DA4B-677B-4601-994A-9773456A27BC}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{F68423E7-5567-4439-BEBF-D27E97EE98AF}"
+	ProjectSection(SolutionItems) = preProject
+		global.json = global.json
+		NuGet.Config = NuGet.Config
+	EndProjectSection
+EndProject
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "InternEvaluate", "src\InternEvaluate\InternEvaluate.xproj", "{846FF6AB-1305-47F6-8B63-747261535392}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{846FF6AB-1305-47F6-8B63-747261535392}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{846FF6AB-1305-47F6-8B63-747261535392}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{846FF6AB-1305-47F6-8B63-747261535392}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{846FF6AB-1305-47F6-8B63-747261535392}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{846FF6AB-1305-47F6-8B63-747261535392} = {EEA7DA4B-677B-4601-994A-9773456A27BC}
+	EndGlobalSection
+EndGlobal

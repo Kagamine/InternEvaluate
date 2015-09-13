@@ -1,0 +1,25 @@
+﻿@{ 
+    ViewBag.Title = "修改密码";
+}
+
+<h2>@ViewBag.Title</h2>
+
+<form asp-action="Modify" asp-controller="Account" method="post">
+    <table class="detail-table">
+        <tr>
+            <td class="row-title">旧密码</td>
+            <td><input type="password" name="currentpwd" /></td>
+        </tr>
+        <tr>
+            <td class="row-title">新密码</td>
+            <td><input type="password" name="newpwd" /></td>
+        </tr>
+        <tr>
+            <td class="row-title">新密码重复</td>
+            <td><input type="password" name="confirmpwd" /></td>
+        </tr>
+    </table>
+    <p>
+        <input type="submit" class="btn inverse" value="提交" />
+    </p>
+</form>
